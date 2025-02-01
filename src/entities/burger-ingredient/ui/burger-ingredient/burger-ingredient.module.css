@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffff;
+}
+
+.cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  text-align: center;
+}
