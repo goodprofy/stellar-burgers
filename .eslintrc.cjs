@@ -67,5 +67,9 @@ module.exports = {
         ],
       },
     ],
+    '@typescript-eslint/consistent-type-imports': [
+      2,
+      { fixStyle: 'inline-type-imports' },
+    ],
   },
 };
