@@ -11,9 +11,21 @@ export function BurgerIngredient({
   name,
   price,
   image,
+  _id,
+  onClick,
 }: BurgerIngredientProps) {
+  const handleClick = () => {
+    if (onClick) {
+      onClick(_id);
+    }
+  };
+
   return (
-    <div key={name} className={clsx(styles.container, 'pb-8')}>
+    <div
+      key={_id}
+      className={clsx(styles.container, 'pb-8')}
+      onClick={handleClick}
+    >
       {count && <Counter count={count} />}
       <img className={styles.img} src={image} alt={name} loading="lazy" />
       <div className={clsx(styles.cost, 'mt-2 mb-2')}>

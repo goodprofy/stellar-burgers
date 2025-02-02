@@ -1,21 +1,47 @@
 import { noop } from 'lodash-es';
 
+import { useModal } from '@/widgets/modal';
 import {
   BurgerIngredient,
   fixtureBurgerIngredients,
+  IngredientDetails,
 } from '@/entities/burger-ingredient';
+import { type BurgerIngredientProps } from '@/entities/burger-ingredient';
 import { Tabs } from '@/shared/ui/tabs/ui/tabs.ui';
 
-import { type MappingBurgerIngredients } from '../../model/burger-ingredient.model';
+import { type MappingBurgerIngredients } from '../model/burger-ingredients.types';
 
 export function BurgerIngredients() {
+  const { showModal } = useModal();
+
+  const handleIngredientClick = (
+    burgerIngredientId: BurgerIngredientProps['_id'],
+  ) => {
+    const foundIngredient = fixtureBurgerIngredients.find(
+      ({ _id }) => _id === burgerIngredientId,
+    );
+
+    if (foundIngredient) {
+      showModal({
+        children: <IngredientDetails {...foundIngredient} />,
+        title: 'Детали ингредиента',
+      });
+    }
+  };
+
   const groupedIngredients =
     fixtureBurgerIngredients.reduce<MappingBurgerIngredients>(
       (acc, burgerIngredient) => {
         const { type } = burgerIngredient;
         return {
           ...acc,
-          [type]: [...acc[type], burgerIngredient],
+          [type]: [
+            ...acc[type],
+            {
+              ...burgerIngredient,
+              onClick: handleIngredientClick,
+            },
+          ],
         };
       },
       {

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 import { AppHeader } from '@/widgets/app-header';
 import { BurgerConstructor } from '@/widgets/burger-constructor';
-import { BurgerIngredients } from '@/entities/burger-ingredient';
+import { BurgerIngredients } from '@/widgets/burger-ingredients';
 import { Container } from '@/shared/ui/container';
 
 import styles from './index-page.module.css';

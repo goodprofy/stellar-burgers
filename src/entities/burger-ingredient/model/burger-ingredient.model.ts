@@ -15,16 +15,5 @@ export interface BurgerIngredientEntity {
 
 export type BurgerIngredientProps = {
   count?: number;
+  onClick?: (ingredientId: BurgerIngredientProps['_id']) => void;
 } & Pick<BurgerIngredientEntity, '_id' | 'name' | 'price' | 'image'>;
-
-export type TabName = BurgerIngredientEntity['type'];
-
-export type MappingBurgerIngredients = Record<TabName, BurgerIngredientProps[]>;
-
-export const tabNameMapping: Record<TabName, string> = {
-  bun: 'Булки',
-  sauce: 'Соусы',
-  main: 'Начинки',
-};
-
-export const tabNames: TabName[] = ['bun', 'sauce', 'main'];
