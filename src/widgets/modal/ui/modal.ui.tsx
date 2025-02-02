@@ -9,6 +9,8 @@ import { type ModalProps } from '../model/modal.types';
 
 import styles from './modal.module.css';
 
+const containerElement = document.getElementById('modals')!;
+
 export function Modal({
   children,
   title,
@@ -48,6 +50,6 @@ export function Modal({
         {children}
       </div>
     </Overlay>,
-    document.body,
+    containerElement,
   );
 }
