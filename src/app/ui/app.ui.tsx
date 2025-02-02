@@ -1,5 +1,7 @@
 import { IndexPage } from '@/pages';
 
-export function App() {
+import { withProviders } from '../providers';
+
+export const App = withProviders(() => {
   return <IndexPage />;
-}
+});

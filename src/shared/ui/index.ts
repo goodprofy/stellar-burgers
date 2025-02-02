@@ -1,6 +1,7 @@
 export {
   BurgerIcon,
   Button,
+  CloseIcon,
   ConstructorElement,
   Counter,
   CurrencyIcon,
