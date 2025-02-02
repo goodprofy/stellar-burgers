@@ -1,4 +1,5 @@
-export { fixtureBurgerIngredients } from './api/burger-ingredients.data';
+export { getIngredients } from './api/burger-ingredients.api';
+export { useIngredients } from './hooks/use-ingredients.hook';
 export {
   type BurgerIngredientEntity,
   type BurgerIngredientProps,
