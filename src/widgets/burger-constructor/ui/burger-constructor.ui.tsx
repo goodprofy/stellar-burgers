@@ -1,25 +1,28 @@
 import clsx from 'clsx';
 
-import { fixtureBurgerIngredients } from '@/entities/burger-ingredient';
+import { type BurgerIngredientEntity } from '@/entities/burger-ingredient';
 import { ConstructorElement, CurrencyIcon, DragIcon } from '@/shared/ui';
 
 import styles from './burger-constructor.module.css';
 
 import { ButtonPlaceOrder } from '@/feature/button-place-order';
 
-export function BurgerConstructor() {
-  const bun = fixtureBurgerIngredients.find(({ type }) => type === 'bun');
+interface Props {
+  ingredients: BurgerIngredientEntity[];
+}
+
+export function BurgerConstructor({ ingredients }: Props) {
+  const bun = ingredients.find(({ type }) => type === 'bun');
 
   if (!bun) {
     return null;
   }
 
-  const ingredients = fixtureBurgerIngredients.filter(
-    ({ type }) => type !== 'bun',
-  );
+  const filteredIngredients = ingredients.filter(({ type }) => type !== 'bun');
 
   const total =
-    bun.price * 2 + ingredients.reduce((sum, { price }) => sum + price, 0);
+    bun.price * 2 +
+    filteredIngredients.reduce((sum, { price }) => sum + price, 0);
 
   const { name, price, image } = bun;
 
@@ -39,7 +42,7 @@ export function BurgerConstructor() {
           'scroll flex flex-col gap-4 list-none p-0 m-0',
         )}
       >
-        {ingredients.map(({ _id, name, price, image }) => {
+        {filteredIngredients.map(({ _id, name, price, image }) => {
           return (
             <li key={_id} className="flex items-center gap-4 pr-1">
               <DragIcon type="primary" />
