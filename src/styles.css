@@ -29,6 +29,10 @@ body {
   display: flex;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 .items-center {
   align-items: center;
 }
@@ -49,6 +53,10 @@ body {
   gap: 16px;
 }
 
+.gap-5 {
+  gap: 20px;
+}
+
 .m-0 {
   margin: 0;
 }
@@ -64,4 +72,8 @@ body {
 .scroll {
   overflow-y: auto;
   scrollbar-width: thin;
+}
+
+.text-left {
+  text-align: left;
 }
