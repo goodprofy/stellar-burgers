@@ -61,11 +61,22 @@ module.exports = {
       {
         groups: [
           ['^react', '^@?\\w'],
-          ['^\\u0000'],
+          [
+            '^(@/app)(/.*|$)',
+            '^(@/pages)(/.*|$)',
+            '^(@/widgets)(/.*|$)',
+            '^(@/features)(/.*|$)',
+            '^(@/entities)(/.*|$)',
+            '^(@/shared)(/.*|$)',
+          ],
           ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
           ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
         ],
       },
+    ],
+    '@typescript-eslint/consistent-type-imports': [
+      2,
+      { fixStyle: 'inline-type-imports' },
     ],
   },
 };

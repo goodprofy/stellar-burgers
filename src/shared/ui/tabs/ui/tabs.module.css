@@ -1,0 +1,8 @@
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.scroll {
+  max-height: 664px;
+}
