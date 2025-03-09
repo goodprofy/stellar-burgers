@@ -1,0 +1,14 @@
+.link {
+  text-decoration: none;
+  color: var(--text-inactive-color);
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--text-primary-color);
+  }
+}
+
+.isActive {
+  color: var(--text-primary-color);
+}

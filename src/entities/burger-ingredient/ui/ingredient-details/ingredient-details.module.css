@@ -1,0 +1,20 @@
+.ingredientDetails {
+  width: 520px;
+  margin: 0 auto;
+}
+
+.nutritionalValues {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-inactive-color);
+}
+
+.nutritionalValue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
